@@ -6,7 +6,10 @@ const urls = [
 ]
 
 /* DEFINIZIONE VARIABILI */
-//per ora nulla
+myBtn = document.getElementById("myBtn");
+
+var aCriminali = new Array()
+var aGuardie = new Array()
 
 /* DEFINIZIONE CLASSI */
 
@@ -20,10 +23,10 @@ class Criminale {
         this.razza = razza;
         this.livelloDiPericolo = livelloDiPericolo;
         //caratteristiche fisiche
-        this.coloreOcchi;
-        this.coloreCapelli;
-        this.altezza;
-        this.peso;
+        this.coloreOcchi = coloreOcchi;
+        this.coloreCapelli = coloreCapelli;
+        this.altezza = altezza;
+        this.peso = peso;
         //proprietà fascicolo
         this.dataC = dataC; //data carcerazione
         this.dataS = dataS; //data scarcerazione
@@ -35,7 +38,7 @@ class Criminale {
         appendendo gli elementi html */
     }
 
-    /*aggiungiCriminale(c){
+    /*aggiungiCriminalezzz(c){
        aCriminali.push(c)
        return "Ok criminale aggiunto"
     }*/
@@ -73,6 +76,14 @@ class Criminale {
 
 }
 
+class Guardia {
+    constructor(id, nome, dataNascita, dataAssunzione) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNascita = dataNascita;
+        this.dataAssunzione = dataAssunzione;
+    }
+}
 
 /*Fascicoli {
     -	data di carcerazione
@@ -85,31 +96,24 @@ class Criminale {
 */
 
 
-class Guardia {
-    constructor(id, nome, dataNascita, dataAssunzione) {
-        this.id = id;
-        this.nome = nome;
-        this.dataNascita = dataNascita;
-        this.dataAssunzione = dataAssunzione;
-    }
-}
-
-/*
-class Page{
-    constructor(){ // sono due array
-
-    }
-
-    
-
-    render(){
-        //const app = document.getElementById('app');  // TODO nome esatto dell'elemento di partenza
-        //page.append(listaCriminaliElm)
-    } 
-}
-*/
 
 class App {
+
+    static aggiungiCriminale(e) {
+        e.preventDefault(); //target sbagliato, restituisce strong
+
+        // controllare se i campi non sono vuoti e controllo sull'ID
+        
+        const cr = new Criminale(formP_id, formP_nome, formP_razza,
+            formP_livelloDiPericolo, formP_coloreOcchi, formP_coloreCapelli,
+            formP_altezza, formP_peso, formP_dataC, formP_dataS, formP_reato, formP_stato)
+        
+        aCriminali.push(cr)
+        
+        this.stampaCriminali()
+    }
+    
+    //fetch
     static async init() {
         const [criminali, guardie] = await Promise.all(urls.map(url => {
             try {
@@ -121,16 +125,42 @@ class App {
         }
         ))
 
-        const aCriminali = this.initCriminali(criminali); //array che contiene tutti i criminali
-        const aGuardie = this.initGuardie(guardie); //array che contiene tutte le guardieinitPrigionieri()
-        
-    }//fine init
+        aCriminali = this.estraiCriminali(criminali); //JSON -> array
+        this.stampaCriminali();   //array -> DOM
 
-    static initCriminali(criminali) {
+        aGuardie = this.estraiGuardie(guardie);
+        this.stampaGuardie();
+
+        //const aGuardie = this.initGuardie(guardie); //array che contiene tutte le guardieinitPrigionieri()
+
+
+    }
+
+    
+    static estraiCriminali(criminali) {
         const arr = new Array();
+        criminali.forEach(el => {
+            //creazione elemento array criminali
+            const cr = new Criminale(el.id, el.nomePersonaggio, el.razza, el.livelloDiPericolo, el.coloreOcchi, el.coloreCapelli, el.altezza, el.peso, el.dataCarcerazione, el.dataScarcerazione, el.reatoCommesso, el.stato)
+            arr.push(cr)
+        })
+        return arr;
+    }
+
+    static estraiGuardie(guardie) {
+        const arr = new Array();
+        guardie.forEach(el => {
+            //creazione elemento array criminali
+            const cr = new Guardia(el.id, el.nomeGuardia, el.dataNascita, el.dataAssunzione)
+            arr.push(cr)
+        })
+        return arr;
+    }
+
+    static stampaCriminali() {
         const cardContainer = document.getElementById('containerPrigionieri');
 
-        criminali.forEach(el => {
+        aCriminali.forEach(el => {
             //creazione DOM
             const cardPrigioniero = document.createElement('div');
             cardPrigioniero.classList.add("cardPrigionieri");
@@ -149,7 +179,7 @@ class App {
 
             div_info.innerHTML = `
                 <div id="idPrigioniero"><strong>ID:</strong> ${el.id}</div>
-                <div id="nomePrigioniero"><strong>Nome:</strong> ${el.nomePersonaggio}</div>
+                <div id="nomePrigioniero"><strong>Nome:</strong> ${el.nome}</div>
                 <div id="razzaPrigioniero"><strong>Razza:</strong> ${el.razza}</div>
                 <div id="livelloDiPericolo"><strong>Livello di pericolo:</strong> ${el.livelloDiPericolo} </div><hr>`
 
@@ -160,9 +190,9 @@ class App {
                 <div id="pesoPrigionieri"><strong>Peso:</strong> ${el.peso}</div><hr>`
 
             div_fascicolo.innerHTML = `
-                <div id="dataC"><strong>Data carc.:</strong> ${el.dataCarcerazione}</div>
-                <div id="dataS"><strong>Data scarc.:</strong> ${el.dataScarcerazione}</div>
-                <div id="reato"><strong>Reato:</strong> ${el.reatoCommesso}</div>
+                <div id="dataC"><strong>Data carc.:</strong> ${el.dataC}</div>
+                <div id="dataS"><strong>Data scarc.:</strong> ${el.dataS}</div>
+                <div id="reato"><strong>Reato:</strong> ${el.reato}</div>
                 <div id="stato"><strong>Stato:</strong> ${el.stato}</div>`
 
             div_buttonList.innerHTML = `
@@ -175,24 +205,17 @@ class App {
             cardPrigioniero.appendChild(div_fascicolo)
             cardPrigioniero.appendChild(div_buttonList)
 
-            //creazione elemento array criminali
-            const cr = new Criminale(el.id, el.nomePersonaggio, el.razza, el.livelloDiPericolo, el.coloreOcchi, el.coloreCapelli, el.altezza, el.peso, el.dataCarcerazione, el.dataScarcerazione, el.reatoCommesso, el.stato)
-            arr.push(cr)
-
             cardContainer.appendChild(cardPrigioniero)
 
         })
+        document.getElementById('numeroPrigionieri').innerHTML = `Il numero di prigionieri è: ${aCriminali.length}`
 
-        document.getElementById('numeroPrigionieri').innerHTML = `Il numero di prigionieri è: ${arr.length}`
+    }
 
-        return arr;
-    }//fine initCriminali
-
-    static initGuardie(guardie) {
-        const arr = new Array();
+    static stampaGuardie() {
         const cardContainer = document.getElementById('containerGuardie');
 
-        guardie.forEach(el => {
+        aGuardie.forEach(el => {
             //creazione DOM
             const cardGuardia = document.createElement('div');
             cardGuardia.classList.add("cardGuardie");
@@ -217,22 +240,21 @@ class App {
             cardGuardia.appendChild(div_info)
             cardGuardia.appendChild(div_buttonList)
 
-            //creazione elemento array criminali
-            const cr = new Guardia(el.id, el.nomeGuardia, el.dataNascita, el.dataAssunzione)
-            arr.push(cr)
-
             cardContainer.appendChild(cardGuardia)
 
         })
-        document.getElementById('numeroGuardie').innerHTML = `Il numero di guardie è: ${arr.length}`
+        document.getElementById('numeroGuardie').innerHTML = `Il numero di guardie è: ${aGuardie.length}`
 
-        return arr;
-    }//fine initCriminali
+    }
+
 
 
 }
 
+myBtn.addEventListener('click', showModalCriminale)
+formP_button.addEventListener('click', App.aggiungiCriminale)
 
+//myBtn2.addEventListener('click', App.aggiungiGuardia)
 App.init();
 
 /*

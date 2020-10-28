@@ -1,22 +1,22 @@
 
-const modal = document.getElementById("myModal");
+function showModalCriminale(){
+    const modal = document.getElementById("myModal");
 
-const btnAddPrigioniere = document.getElementById("myBtn");
+    const span = document.getElementsByClassName("close")[0];
 
-const span = document.getElementsByClassName("close")[0];
+    myBtn.onclick = function () {
+        modal.style.display = "block";
+    }
 
-btnAddPrigioniere.onclick = function() {
-modal.style.display = "block";
-}
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
 
-span.onclick = function() {
-modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-if (event.target == modal) {
-    modal.style.display = "none";
-}
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 }
 
 function myFunction() {

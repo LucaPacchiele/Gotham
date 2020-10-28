@@ -135,14 +135,14 @@ button {
     font-size: 1.8em;
     font-family: "Lato", sans-serif;
 }
-#btnSubmit {
+#formP_button {
       width: 100px;
     height: 40px;
     background: rgb(208,212,217);
     background: linear-gradient(180deg, rgba(208,212,217,1) 0%, rgba(133,136,139,1) 37%, rgba(86,87,89,1) 100%);
     margin-top: 20px;
 }
-#btnSubmit:hover {
+#formP_button:hover {
   background: rgb(208,212,217);
   background: linear-gradient(0deg, rgba(208,212,217,1) 0%, rgba(133,136,139,1) 37%, rgba(86,87,89,1) 100%);
 }

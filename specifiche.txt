@@ -1,0 +1,26 @@
+Criminali{
+-	ID (generiamo automaticamente, indice array)
+-	nome Personaggio
+-	razza
+-	caratteristiche Fisiche
+    -	colore Occhi
+    -	colore Capelli
+    -	altezza
+    -	peso
+-	livelloDiPericolo
+*	Visualizza detenuto ()
+*	Inserisci detenuto/cancellazione/modifica () 
+    Fascicoli {
+    -	data di carcerazione
+    -	data di scarcerazione
+    -	reato commesso
+    -	Stato(Evaso / Morto / Prigioniero (controllo con datascarcerazione/carcerazione))
+    -	Inserisci Fascicolo/cancellazione/modifica
+    *	Ricerca fascicolo
+    *   Visualizza fascicolo
+
+Guardie{
+-	ID
+-	nome Guardia
+-	Inserisci detenuto/cancellazione/modifica
+-	Visualizza

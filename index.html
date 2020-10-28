@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<header>
+    <div class="navbar">
+        <div class="logo">BAT-CARCERE</div>
+        <div class="menu"><i class="fas fa-ellipsis-v"></i></div>
+    </div>
+</header>
+<body>
+    <div class="card">
+        <div class="cardPrigionieri">
+            <div id="informazioniPrigioniero">
+                <div id="idPrigioniero"><strong>ID:</strong> 12345</div>
+                <div id="nomePrigioniero"><strong>Nome:</strong> Amazo</div>
+                <div id="razzaPrigioniero"><strong>Razza:</strong> Android</div>
+            </div>
+            <div id="caratteristichePrigioniero">
+                <div id="occhiPrigionieri"><strong>Colore Occhi:</strong> red</div>
+                <div id="capelliPrigionieri"><strong>Colore Capelli:</strong> -</div>
+                <div id="altezzaPrigionieri"><strong>Altezza:</strong> 257.0</div>
+                <div id="pesoPrigionieri"><strong>Peso:</strong> 173.0</div>
+            </div>
+            <div id="footerCard">
+            <div id="livelloDiPericolo"><strong>Livello di pericolo:</strong> 5 </div>
+            <div id="buttonList">
+                <button type="button" id="btnDelete"><i class="fas fa-trash-alt"></i></button>
+                <button type="button" id="btnModifica"><i class="fas fa-exclamation"></i></button>
+                <button type="button" id="btnViewFascicolo">Fascicolo</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="navbar">
+            I 7 Nani
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<!--
+
+Criminali{
+-	ID (generiamo automaticamente, indice array)
+-	nome Personaggio
+-	razza
+-	caratteristiche Fisiche
+o	colore Occhi
+o	colore Capelli
+o	altezza
+o	peso
+-	livelloDiPericolo
+Fascicoli {
+-	data di carcerazione
+-	data di scarcerazione
+-	reato commesso
+-	Stato (Prigioniero controllo con data)
+-	Stato2(Evaso / Morto)
+-	Inserisci Fascicolo/cancellazione/modifica
+-	Ricerca
+o	Visualizza
+-	Inserisci detenuto/cancellazione/modifica
+-	Visualizza
+	
+
+Guardie{
+-	ID
+-	nome Guardia
+-	Inserisci detenuto/cancellazione/modifica
+-	Visualizza
+
+-->

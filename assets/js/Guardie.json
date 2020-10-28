@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "nomeGuardia": "Umberto Smaila",
+        "dataNascita": "07/04/1980",
+        "dataAssunzione": "22/08/2017"
+        
+    },
+    {
+        "id": 2,
+        "nomeGuardia":"Manuto Imbuto",
+        "dataNascita": "10/07/1975",
+        "dataAssunzione": "18/06/2011"
+    },
+    {
+        "id":3,
+        "nomeGuardia": "Ciccio Caputo",
+        "dataNascita": "16/09/1967",
+        "dataAssunzione": "11/05/2005"
+        
+    },
+    {
+        "id": 4,
+        "nomeGuardia": "Carmine Trucebaldazzi",
+        "dataNascita": "05/12/1982",
+        "dataAssunzione": "16/01/2001"
+    },
+    {
+        "id": 5,
+        "nomeGuardia": "Paolo Limiti",
+        "dataNascita": "28/02/1971",
+        "dataAssunzione": "15/09/2003"
+    },
+    {
+        "id": 6,
+        "nomeGuardia": "Eugenio Sgoccioli",
+        "dataNascita": "25/03/1986",
+        "dataAssunzione": "04/03/2018"
+    },
+    {
+        "id": 7,
+        "nomeGuardia": "Marco Trapezi",
+        "dataNascita": "01/12/1999",
+        "dataAssunzione": "21/05/2015"
+    },
+    {
+        "id": 8,
+        "nomeGuardia": "Casimiro Valori",
+        "dataNascita": "27/09/1984",
+        "dataAssunzione": "20/12/2012"
+    },
+    {
+        "id": 9,
+        "nomeGuardia": "Joe Caselli",
+        "dataNascita": "19/05/1969",
+        "dataAssunzione": "17/09/1999"
+    },
+    {
+        "id": 10,
+        "nomeGuardia": "Beppe Rossi",
+        "dataNascita": "14/10/1980",
+        "dataAssunzione": "16/02/2002"
+    }
+    
+    
+]

@@ -1,82 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <header>
-    <div class="navbar">
-        <div class="logo">BAT-CARCERE</div>
-        <div class="menu"><i class="fas fa-ellipsis-v"></i></div>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="">Prigionieri</a></li>
+            <li><a href="">Guardie</a></li>
+        </ul>
+    </nav>
 </header>
-<body>
-    <div class="card">
-        <div class="cardPrigionieri">
-            <div id="informazioniPrigioniero">
-                <div id="idPrigioniero"><strong>ID:</strong> 12345</div>
-                <div id="nomePrigioniero"><strong>Nome:</strong> Amazo</div>
-                <div id="razzaPrigioniero"><strong>Razza:</strong> Android</div>
-            </div>
-            <div id="caratteristichePrigioniero">
-                <div id="occhiPrigionieri"><strong>Colore Occhi:</strong> red</div>
-                <div id="capelliPrigionieri"><strong>Colore Capelli:</strong> -</div>
-                <div id="altezzaPrigionieri"><strong>Altezza:</strong> 257.0</div>
-                <div id="pesoPrigionieri"><strong>Peso:</strong> 173.0</div>
-            </div>
-            <div id="footerCard">
-            <div id="livelloDiPericolo"><strong>Livello di pericolo:</strong> 5 </div>
-            <div id="buttonList">
-                <button type="button" id="btnDelete"><i class="fas fa-trash-alt"></i></button>
-                <button type="button" id="btnModifica"><i class="fas fa-exclamation"></i></button>
-                <button type="button" id="btnViewFascicolo">Fascicolo</button>
-            </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div class="navbar">
-            I 7 Nani
-        </div>
-    </footer>
 
-    <script src="assets/js/main.js"></script>
+<body>
+    <container>
+        <div class="divPrigionieri">
+            <div id="numeroPrigionieri">
+            </div>
+            <hr>
+            <div class="btnContainer">
+                <button id="myBtn"><strong>+</strong> Aggiungi Prigioniero</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">X</span>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="header-modal">
+                                    <h2>Aggiungi Prigioniero
+                                    </h2>
+                                </div>
+                                <div class="formLeft">
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>ID:</strong></label>
+                                        </div>
+                                        <input type="">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Nome:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Razza:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Livello di pericolo:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Data di carcerazione:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Data di rilascio:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                </div>
+                                <div class="formRight">
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Colore occhi:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Colore capelli:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Altezza:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Peso:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Crimine:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Status:</strong></label>
+                                        </div>
+                                        <input type="text" name='' id=''>
+                                    </div>
+                                </div>
+                                <button type="submit" id="btnSubmit"><strong>Aggiungi</strong></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="containerPrigionieri" class="cardContainer">
+                <!--
+    <div class="cardPrigionieri">
+       <div class="informazioniPrigioniero">
+            <div id="idPrigioniero"><strong>ID:</strong> 12345</div>
+            <div id="nomePrigioniero"><strong>Nome:</strong> Amazo</div>
+            <div id="razzaPrigioniero"><strong>Razza:</strong> Android</div>
+            <div id="livelloDiPericolo"><strong>Livello di pericolo:</strong> 5 </div>
+        </div>
+        <div class="caratteristichePrigioniero">
+            <div id="occhiPrigionieri"><strong>Colore occhi:</strong> red</div>
+            <div id="capelliPrigionieri"><strong>Colore capelli:</strong> -</div>
+            <div id="altezzaPrigionieri"><strong>Altezza:</strong> 257.0</div>
+            <div id="pesoPrigionieri"><strong>Peso:</strong> 173.0</div>
+        </div>
+    
+        
+        <div id="footerCard">
+        </div>
+        <div id="myDIV" class="listFascicolo" style="display: none;">
+            <div class="formLeft">
+            <div><strong>Data di carcerazione:</strong></div>
+            <div id="dataEntarta">2020</div>
+            <div><strong>Crimine:</strong></div>
+            <div id="crimeine">Hack</div>
+            </div>
+            <div class="formRight"></div>
+            <div><strong>Data di rilascio:</strong></div>
+            <div class="dataUscita">2100</div>
+            <div><strong>Status:</strong></div>
+            <div id="statusPrigioniero">Morto</div>
+        </div>
+        <div id="buttonList">
+            <button type="button" id="btnDelete"><i class="fas fa-trash-alt tooltip"><span class="tooltiptext">Delete</span></i></button>
+            <button type="button" id="btnModifica"><i class="fas fa-exclamation tooltip"><span class="tooltiptext">Modifica</span></i></button>
+            <button type="button" onclick="myFunction()" id="btnViewFascicolo" ><i class="fas fa-book-dead tooltip"><span class="tooltiptext">Fascicolo</span></i></button>
+        </div>
+    
+    </div>
+    -->
+            </div>
+
+        </div>
+
+        <div class="divGuardie">
+            <div id="numeroGuardie"></div>
+            <hr>
+            <div class="btnContainer">
+                <button id="myBtn2"><strong>+</strong> Aggiungi Guardia</button>
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close2">X</span>
+                            <h2>Modal Header</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="formLeft">
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>ID:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Nome:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Razza:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Livello di pericolo:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="formRight">
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Colore occhi:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Colore capelli:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Altezza:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for=""><strong>Peso:</strong></label>
+                                        </div>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="containerGuardie" class="cardContainer">
+
+            </div>
+        </div>
+    </container>
 </body>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/main2.js"></script>
 
 </html>
-
-<!--
-
-Criminali{
--	ID (generiamo automaticamente, indice array)
--	nome Personaggio
--	razza
--	caratteristiche Fisiche
-o	colore Occhi
-o	colore Capelli
-o	altezza
-o	peso
--	livelloDiPericolo
-Fascicoli {
--	data di carcerazione
--	data di scarcerazione
--	reato commesso
--	Stato (Prigioniero controllo con data)
--	Stato2(Evaso / Morto)
--	Inserisci Fascicolo/cancellazione/modifica
--	Ricerca
-o	Visualizza
--	Inserisci detenuto/cancellazione/modifica
--	Visualizza
-	
-
-Guardie{
--	ID
--	nome Guardia
--	Inserisci detenuto/cancellazione/modifica
--	Visualizza
-
--->

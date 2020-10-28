@@ -24,3 +24,13 @@ Guardie{
 -	nome Guardia
 -	Inserisci detenuto/cancellazione/modifica
 -	Visualizza
+
+
+
+
+
+/* CLASSI */
+- App
+- Page
+- Criminale
+- Guardia

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400&display=swap');
+* {
+    box-sizing: border-box;
+}
+html {
+    padding: 0;
+    margin: 0;
+    font-family:  "Lato", sans-serif;
+}
+body {
+    background-color: #1a1e23;
+    color: #6f7275;
+}
+container {}
+/* NAVBAR */
+nav {
+    position: relative;
+    padding-bottom: 10vh;
+    padding-left: 40%;
+  }
+  nav .line {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0 0 0;
+    background: #FF1847;
+  }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: flex;
+  }
+  nav ul li {
+    margin: 0 40px 0 0;
+    opacity: 0.4;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  nav ul li:hover {
+    opacity: 0.7;
+  }
+  nav ul li.active {
+    opacity: 1;
+  }
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+  }
+#numeroPrigionieri, #numeroGuardie {
+margin-left: 10%;
+}
+h2 {
+  margin: 0;
+
+}
+hr {
+    width: 80%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.btnContainer {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+#myBtn {
+    color: #FF1847;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 3vh;
+}
+#myBtn:hover {
+    color: #c71236;
+    font-size: 3.5vh;
+}
+/* Card */
+.cardContainer {
+    margin-right: 5%;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap:wrap;
+}
+.cardPrigionieri, .cardGuardie {
+    width: 30%;
+    color: #1a1e23;
+    height: auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.48);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.48);
+    margin: 2vh;
+    border-radius: 5px;
+    padding: 1vh 1vh;
+}
+.cardPrigionieri {background-color: #85888b;}
+.cardGuardie {background-color: #ffaa00}
+
+#informazioniPrigioniero {
+    float: left;
+    width: 50%;
+}
+#caratteristichePrigioniero {
+    float: right;
+    width: 50%;
+}
+#livelloDiPericolo {
+    display: inline;
+}
+#footerCard {
+    display: inline-flex;
+    margin: 2px 5px;
+    text-align: center;
+}
+#livelloDiPericolo {
+    display: inline;
+    margin-right: 5vh;
+}
+.cardContainer:nth-child() {
+    margin: 2px;
+}
+
+/* Menu */
+button {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 1.8em;
+    font-family: "Lato", sans-serif;
+}
+#btnSubmit {
+      width: 100px;
+    height: 40px;
+    background: rgb(208,212,217);
+    background: linear-gradient(180deg, rgba(208,212,217,1) 0%, rgba(133,136,139,1) 37%, rgba(86,87,89,1) 100%);
+    margin-top: 20px;
+}
+#btnSubmit:hover {
+  background: rgb(208,212,217);
+  background: linear-gradient(0deg, rgba(208,212,217,1) 0%, rgba(133,136,139,1) 37%, rgba(86,87,89,1) 100%);
+}
+#buttonList {
+    text-align: end;
+}
+#btnDelete {
+    color: #bd0e31;
+    margin-bottom: 1vh;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #1a1e23;
+    color: #b2b8be ;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-family: "Lato", sans-serif;
+    font-size: 2vh;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* MODAL */
+
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 3rem; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  /* Modal Content */
+  .modal-content {
+  position: relative;
+  background-color: #1a1e23;
+  margin: auto;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 65%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+  
+  input {
+    margin: 2rem;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+  color: #6f7275;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+  }
+  
+  .modal-header {
+  padding: 1rem 3rem;
+  background-color: #1a1e23;
+  color: #555;
+  }
+  
+  .modal-body {
+  padding: 1rem 3rem;
+  width: auto;
+  height: auto;
+  margin: 2vh;
+}
+  
+input {
+  background-color: #85888b;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin: 3px;
+}
+.formLeft {
+  float: right;
+  width: 50%;
+}
+.formLeft {
+  float: left;
+  width: 50%;
+}

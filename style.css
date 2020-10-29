@@ -76,18 +76,24 @@ hr {
     color: #FF1847;
     
     font-family: 'Lato', sans-serif;
-    font-size: 3vh;
+    font-size: 1.7em;
 }
 #myBtn:hover {
     color: #c71236;
-    font-size: 3.5vh;
+    font-size: 1.9em;
 }
 /* Card */
-.cardContainer {
+.cardContainerPrigionieri {
     margin-right: 5%;
     margin-left: 5%;
     display: flex;
     flex-wrap:wrap;
+}
+.cardContainerGuardie {
+  margin-right: 5%;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap:wrap;
 }
 .cardPrigionieri, .cardGuardie {
     width: 30%;
@@ -123,7 +129,7 @@ hr {
     display: inline;
     margin-right: 5vh;
 }
-.cardContainer:nth-child() {
+.cardContainerPrigionieri:nth-child() {
     margin: 2px;
 }
 
@@ -136,7 +142,7 @@ button {
     font-family: "Lato", sans-serif;
 }
 #formP_button {
-      width: 100px;
+    width: 100px;
     height: 40px;
     background: rgb(208,212,217);
     background: linear-gradient(180deg, rgba(208,212,217,1) 0%, rgba(133,136,139,1) 37%, rgba(86,87,89,1) 100%);

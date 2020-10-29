@@ -8,10 +8,17 @@ html {
     font-family:  "Lato", sans-serif;
 }
 body {
-    background-color: #1a1e23;
-    color: #6f7275;
+  background-color: #1a1e23;
+  color: #6f7275;
+  background-image: url(sfondo.png);
+  background-size: 100% ;
+  background-repeat:repeat-y;
+  
+} /* prova */
+container {
+  z-index:99999;
+  background-color: rgba(0, 0, 0, 0.479);
 }
-container {}
 /* NAVBAR */
 nav {
     position: relative;
